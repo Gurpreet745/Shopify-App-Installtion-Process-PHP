@@ -11,7 +11,7 @@ if(isset($_REQUEST['shop'])){
 	$tokenQuery->close();
 	/*Check Whether app is already install or not*/
 	if($getToken->num_rows > 0){
-		header('location:'.$appUrl.'/AppIndex.php');
+		header('location:'.$appUrl.'/AppIndex.php?shop='.$shop);
 	}else{
 		/* get app credentials and redirect url*/
 		$dbquery = $db->prepare("SELECT * FROM tbl_appsettings order by id ASC limit 1");
